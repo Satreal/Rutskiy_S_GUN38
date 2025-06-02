@@ -844,8 +844,8 @@ GameObject:
   - component: {fileID: 6830306297948795042}
   - component: {fileID: 132813041125071252}
   - component: {fileID: 6337607878913069685}
-  - component: {fileID: 1439541021838376252}
   - component: {fileID: 7230742240385507333}
+  - component: {fileID: 7020603958781373388}
   - component: {fileID: 3286438398799179869}
   m_Layer: 0
   m_Name: Panzer
@@ -976,20 +976,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1439541021838376252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8454541357645438182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b3e21422e254466810369536a65b19b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _accelerationPower: 1
-  _fireDelaySec: 1
 --- !u!114 &7230742240385507333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1018,6 +1004,19 @@ MonoBehaviour:
   _maxSpeedFOV: 200
   _fov: {x: 40, y: 40}
   _debugTorque: 0
+--- !u!114 &7020603958781373388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454541357645438182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6213543e868e4a008eaa9de7f85ad61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotateSpeed: 1
 --- !u!82 &3286438398799179869
 AudioSource:
   m_ObjectHideFlags: 0
