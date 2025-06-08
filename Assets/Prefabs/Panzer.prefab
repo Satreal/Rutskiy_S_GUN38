@@ -956,7 +956,7 @@ MonoBehaviour:
   <Velocity>k__BackingField: 100
   _reloadDelay: 1.5
   _emitSmokeCount: 3
-  _firePower: 120000
+  _firePower: 100000
   _muzzleEffect: {fileID: 2235902615954782803}
   _smokeEffect: {fileID: 3540395842310709450}
   _hitEffect: {fileID: 198656289721292014, guid: 318d92bfb9c51a24489f25da35f234a0, type: 3}
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   _centreOfMass: {x: 0, y: -0.3, z: 0}
   _downforce: 100
   _slipLimit: 0.3
-  _reverseMult: 0.4
+  _reverseMult: 0.6
   _maxSpeedFOV: 100
   _fov: {x: 40, y: 80}
   _debugTorque: 0
