@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ca9cb6b7f846ae81ae87e0dbed4643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _body: {fileID: 6975569929975650089}
   _explosionRadius: 2
   _explosionForce: 7
   _lifeTime: 3.5
