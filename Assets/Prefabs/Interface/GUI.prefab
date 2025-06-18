@@ -111,9 +111,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8140087509965160177}
     m_Modifications:
+    - target: {fileID: 394652415245771462, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: _switchIndicatorVolume
+      value: 11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 864973464349252360, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 438.1372
+      objectReference: {fileID: 0}
+    - target: {fileID: 864973464349252360, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90.7437
+      objectReference: {fileID: 0}
+    - target: {fileID: 864973464349252360, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.0759
+      objectReference: {fileID: 0}
+    - target: {fileID: 864973464349252360, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -33.7719
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428921370486432686, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: Priority
+      value: 104
+      objectReference: {fileID: 0}
     - target: {fileID: 4635508767711739408, guid: de01704463d07734ba23164b8b8861f6, type: 3}
       propertyPath: m_Name
       value: CarnageIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502940818827208796, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_margin.w
+      value: -0.65177155
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502940818827208796, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.9259586
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502940818827208796, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.72641504
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502940818827208796, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4293704191
       objectReference: {fileID: 0}
     - target: {fileID: 5631653509181909252, guid: de01704463d07734ba23164b8b8861f6, type: 3}
       propertyPath: m_Pivot.x
@@ -198,8 +238,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2843474645295415203, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6343850046542412418}
   m_SourcePrefab: {fileID: 100100000, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+--- !u!1 &4063917400868042081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2843474645295415203, guid: de01704463d07734ba23164b8b8861f6, type: 3}
+  m_PrefabInstance: {fileID: 2239382237859351234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &6343850046542412418
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4063917400868042081}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a047e468001c33a4e9f055fe9b41b292, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a047e468001c33a4e9f055fe9b41b292, type: 2}
+  - {fileID: 7400000, guid: 81d0ff0fa21195346a0a214bbcdc0989, type: 2}
+  - {fileID: 7400000, guid: 50d07e5d1b666bd4bbc26c22e41d9905, type: 2}
+  - {fileID: 7400000, guid: 8c598c10b7fa00e4ba041674a36c4872, type: 2}
+  - {fileID: 7400000, guid: f438ec85fcae7de43b0585ede14c2ffe, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!224 &5851377960047846342 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5631653509181909252, guid: de01704463d07734ba23164b8b8861f6, type: 3}
@@ -213,9 +281,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8140087509965160177}
     m_Modifications:
+    - target: {fileID: 705970251524158559, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705970251524158559, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.699997
+      objectReference: {fileID: 0}
     - target: {fileID: 2663593580684753662, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
       propertyPath: m_Name
       value: Speedometer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658668399815163396, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658668399815163396, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 83.257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737696508223710380, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 21.078
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737696508223710380, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 71.874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737696508223710380, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737696508223710380, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053385703119572033, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8768247612675878891, guid: c87b9aeb8cc872d46a57fa58f2568e9d, type: 3}
       propertyPath: m_Pivot.x
