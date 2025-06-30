@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 2909959815759903921}
   - component: {fileID: 2589682145546973206}
   m_Layer: 9
-  m_Name: FrontRight
+  m_Name: RightFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 3385725920261584809}
   - component: {fileID: 4524574978364343417}
   m_Layer: 9
-  m_Name: FrontLeft
+  m_Name: LeftFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 1824257043463963083}
   - component: {fileID: 6433021354730648986}
   m_Layer: 9
-  m_Name: BackLeft
+  m_Name: LeftRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,7 +965,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 106
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1307,8 +1307,8 @@ Rigidbody:
   m_GameObject: {fileID: 8454541357645438182}
   serializedVersion: 4
   m_Mass: 3000
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.01
+  m_AngularDrag: 0.01
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1584,7 +1584,7 @@ GameObject:
   - component: {fileID: 181778498892002682}
   - component: {fileID: 5124745326615222404}
   m_Layer: 9
-  m_Name: BackRight
+  m_Name: RightRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
