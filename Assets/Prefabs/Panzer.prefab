@@ -567,7 +567,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 32768
+    ctime1: 31483
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -1167,8 +1167,8 @@ MonoBehaviour:
   _gunAngleLimit:
     Min: -25
     Max: 25
-  _horRotateSpeed: 8
-  _vertRotateSpeed: 0.3
+  _horRotateSpeed: 2
+  _vertRotateSpeed: 0.1
   <FirePoint>k__BackingField: {fileID: 4777267391394149384}
   _controller: {fileID: 7020603958781373388}
   <Velocity>k__BackingField: 90
@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e26ff9a27948a4b491c756ab3fdb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mult: 0.1
+  _mult: 0.3
 --- !u!1 &8518307061644582711
 GameObject:
   m_ObjectHideFlags: 0
