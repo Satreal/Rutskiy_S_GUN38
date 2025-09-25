@@ -2,60 +2,64 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEditor;
 
 namespace DefaultNamespace
 {
-	public class PositionSaver : MonoBehaviour
-	{
-		[Serializable] 
-		public struct Data
-		{
-			public Vector3 Position;
-			public float Time;
-		}
+    public class PositionSaver : MonoBehaviour
+    {
+        [Serializable]
+        public struct Data
+        {
+            public Vector3 Position;
+            public float Time;
+        }
 
-		[Readonly] private TextAsset _json;
+        [ReadOnly, SerializeField, Tooltip("для заполнения этого поля нужно воспользоваться контекстным меню в инспекторе и командой “Create File”")]
+        private TextAsset _json;
 
-		public List<Data> Records { get; private set; }
+        [SerializeField, HideInInspector]
+        private List<Data> _records = new List<Data>();
+        public List<Data> Records => _records;
 
-		private void Awake()
-		{
+        private void Awake()
+        {
             //todo comment: Что будет, если в теле этого условия не сделать выход из метода?
             //предотвращает выполнение некорректного кода, т.е. убрав return - при значении null код продолжит выполняться и  выкинет ошибку NullReferenceException: Object reference not set to an instance of an object 
             if (_json == null)
-			{
-				gameObject.SetActive(false);
-				Debug.LogError("Please, create TextAsset and add in field _json");
-				return;
-			}
-			
-			JsonUtility.FromJsonOverwrite(_json.text, this);
+            {
+                gameObject.SetActive(false);
+                Debug.LogError("Please, create TextAsset and add in field _json");
+                return;
+            }
+
+            JsonUtility.FromJsonOverwrite(_json.text, this);
             //todo comment: Для чего нужна эта проверка (что она позволяет избежать)?
             //позволяет избежать работу с nullевыми значениями и соответственно, предотвращает NullReferenceException. 
-            if (Records == null)
-				Records = new List<Data>(10);
-		}
+            if (_records == null)
+            { _records = new List<Data>(10); }
+        }
 
-		private void OnDrawGizmos()
-		{
-			//todo comment: Зачем нужны эти проверки (что они позволляют избежать)?
-			// также позволяет избежать ошибки, связанные с отсутствием значения, т.е. гарантирует наличие хотя бы одного элемента
-			if (Records == null || Records.Count == 0) return;
-			var data = Records;
-			var prev = data[0].Position;
-			Gizmos.color = Color.green;
-			Gizmos.DrawWireSphere(prev, 0.3f);
+        private void OnDrawGizmos()
+        {
+            //todo comment: Зачем нужны эти проверки (что они позволляют избежать)?
+            // также позволяет избежать ошибки, связанные с отсутствием значения, т.е. гарантирует наличие хотя бы одного элемента
+            if (_records == null || _records.Count == 0) return;
+            var data = _records;
+            var prev = data[0].Position;
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(prev, 0.3f);
             //todo comment: Почему итерация начинается не с нулевого элемента?
             //нулевой элемент отработан в коде выше - var prev = data[0].Position
             for (int i = 1; i < data.Count; i++)
-			{
-				var curr = data[i].Position;
-				Gizmos.DrawWireSphere(curr, 0.3f);
-				Gizmos.DrawLine(prev, curr);
-				prev = curr;
-			}
-		}
-		
+            {
+                var curr = data[i].Position;
+                Gizmos.DrawWireSphere(curr, 0.3f);
+                Gizmos.DrawLine(prev, curr);
+                prev = curr;
+            }
+        }
+
 #if UNITY_EDITOR
 		[ContextMenu("Create File")]
 		private void CreateFile()
@@ -93,8 +97,24 @@ namespace DefaultNamespace
 
 		private void OnDestroy()
 		{
-			//todo logic...
+			if(_json==null)
+			{
+			    return;
+			}
+            var serializedRecords = JsonUtility.ToJson(this,true);
+            var path=UnityEditor.AssetDatabase.GetAssetPath(_json);
+           
+            path = Path.Combine(Application.dataPath.Replace("Assets",""),path);
+            File.WriteAllText(path, serializedRecords);
+
+            UnityEditor.EditorUtility.SetDirty(_json);
+            UnityEditor.AssetDatabase.SaveAssets();
+            UnityEditor.AssetDatabase.Refresh();
+           
+
+           
+            
 		}
 #endif
-	}
+    }
 }

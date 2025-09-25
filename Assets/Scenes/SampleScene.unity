@@ -440,6 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9666ac784e4149f8bfa323c3666015aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delay: 0.5
+  _duration: 4.4
 --- !u!114 &1693182631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3226310a310541faa9835d4026986bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _json: {fileID: 4900000, guid: 069c27ccba549434c8e8471c8b91c0db, type: 3}
+  _records: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

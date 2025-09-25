@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEditor;
+
 
 namespace DefaultNamespace
 {
@@ -11,14 +13,19 @@ namespace DefaultNamespace
 		
 		//todo comment: Что произойдёт, если _delay > _duration?
 		//будеть мало записей, т.к. процесс записи закончится быстрее
+		[SerializeField,Range (0.2f,1f)]
 		private float _delay = 0.5f;
+		[SerializeField, Min(0.2f)]
 		private float _duration = 5f;
 
 		private void Start()
 		{
             //todo comment: Почему этот поиск производится здесь, а не в начале метода Update?
             //потому что это идет как стартовая операция - нет необходимости искать компонент каждый кадр
-
+			if(_duration<_delay)
+			{
+				_duration = _delay * 5;
+			}
             _save = GetComponent<PositionSaver>();
 			_save.Records.Clear();
 		}

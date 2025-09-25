@@ -5,11 +5,11 @@ using UnityEditor;
 
 namespace DefaultNamespace
 {
-    public class ReadonlyAttribute : PropertyAttribute { }
+    public class ReadOnlyAttribute : PropertyAttribute { }
 #if UNITY_EDITOR
 
-[UnityEditor.CustomPropertyDrawer(typeof(ReadonlyAttribute))]
-public class ReadonlyPropertyDrawer : UnityEditor.PropertyDrawer
+[UnityEditor.CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
+public class ReadOnlyPropertyDrawer : UnityEditor.PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
