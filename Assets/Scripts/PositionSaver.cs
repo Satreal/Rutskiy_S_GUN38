@@ -8,6 +8,8 @@ namespace DefaultNamespace
 {
     public class PositionSaver : MonoBehaviour
     {
+        [SerializeField]
+        public Data _data;
         [Serializable]
         public struct Data
         {
@@ -18,9 +20,8 @@ namespace DefaultNamespace
         [ReadOnly, SerializeField, Tooltip("для заполнения этого поля нужно воспользоваться контекстным меню в инспекторе и командой “Create File”")]
         private TextAsset _json;
 
-        [SerializeField, HideInInspector]
-        private List<Data> _records = new List<Data>();
-        public List<Data> Records => _records;
+        [field:SerializeField, HideInInspector]
+        public List<Data> Records {get;private set;}
 
         private void Awake()
         {
@@ -36,16 +37,18 @@ namespace DefaultNamespace
             JsonUtility.FromJsonOverwrite(_json.text, this);
             //todo comment: Для чего нужна эта проверка (что она позволяет избежать)?
             //позволяет избежать работу с nullевыми значениями и соответственно, предотвращает NullReferenceException. 
-            if (_records == null)
-            { _records = new List<Data>(10); }
+            if (Records == null)
+            { 
+                Records = new List<Data>(10);
+            }
         }
 
         private void OnDrawGizmos()
         {
             //todo comment: Зачем нужны эти проверки (что они позволляют избежать)?
             // также позволяет избежать ошибки, связанные с отсутствием значения, т.е. гарантирует наличие хотя бы одного элемента
-            if (_records == null || _records.Count == 0) return;
-            var data = _records;
+            if (Records == null || Records.Count == 0) return;
+            var data = Records;
             var prev = data[0].Position;
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(prev, 0.3f);
@@ -110,10 +113,6 @@ namespace DefaultNamespace
             UnityEditor.EditorUtility.SetDirty(_json);
             UnityEditor.AssetDatabase.SaveAssets();
             UnityEditor.AssetDatabase.Refresh();
-           
-
-           
-            
 		}
 #endif
     }
