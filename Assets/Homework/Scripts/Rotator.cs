@@ -12,7 +12,7 @@ public class Rotator : MonoBehaviour
         Rigidbody body = GetComponent<Rigidbody>();
         if(body == null)
         {
-            Debug.Log("Отсутствует Rigidbody на {Gameobject.name}");
+            Debug.Log($"Отсутствует Rigidbody на {gameObject.name}");
             yield break;
         }
         body.isKinematic = true;
