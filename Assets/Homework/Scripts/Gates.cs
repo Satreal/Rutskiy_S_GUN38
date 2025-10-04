@@ -8,7 +8,7 @@ public class Gate : MonoBehaviour
 {
     [SerializeField]
     private int _score; //счетчик голов
-    [SerializeField, Range(1f,10f)]
+    [SerializeField, Range(2f,10f)]
     private int _maxScore;
 
     private void OnTriggerEnter(Collider other)

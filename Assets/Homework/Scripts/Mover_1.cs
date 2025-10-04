@@ -6,16 +6,16 @@ using UnityEngine;
 public class Mover_1 : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 _start = new Vector3(-10, 0, 0);
+    private  Vector3 _start = new Vector3(-10, 0, 0);
     [SerializeField]
     private Vector3 _end = new Vector3(10, 0, 0);
     [SerializeField]
-    private float _speed=1f;
+    private float _speed=25f;
     [SerializeField]
-    private float _delay=1f;
+    private float _delay=0.3f;
     private Rigidbody _rigidbody;
+    private Vector3 position;
 
-    
     private IEnumerator Start()
     {
         if (_rigidbody == null)
@@ -23,8 +23,11 @@ public class Mover_1 : MonoBehaviour
             Debug.LogError("Rigidbody is null");
             yield break;
         }
-        _rigidbody.position = _start;
-        var finish = _end;
+        
+        Vector3 worldStart = position +transform.TransformDirection(_start);
+        Vector3 worldEnd =position+ transform.TransformDirection(_end);
+        _rigidbody.position = worldStart;
+        var finish = worldEnd;
        
         while (true)
         {
@@ -34,7 +37,7 @@ public class Mover_1 : MonoBehaviour
             if (_rigidbody.position==finish)
             {
                 yield return new WaitForSeconds(_delay);
-                finish = finish == _end ? _start : _end;
+                finish = finish == worldEnd ? worldStart : worldEnd;
             }
             yield return null;
         }
@@ -47,14 +50,27 @@ public class Mover_1 : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.isKinematic = true;
-       
+        position = transform.position;
+
     }
 
     private void OnDrawGizmos()
     {
+        if (Application.isPlaying)
+        {
+            return;
+        }
+
+        Vector3 baseposition = transform.position; 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine( _start, _end);
-        
+        Vector3 worldStart = baseposition + transform.TransformDirection(_start);
+        Vector3 worldEnd = baseposition + transform.TransformDirection(_end);
+        Gizmos.DrawLine(  worldStart, worldEnd);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(worldStart, 0.4f);
+        Gizmos.DrawSphere(worldEnd, 0.4f);
+
+
     }
 }
 
