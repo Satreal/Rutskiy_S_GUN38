@@ -28,9 +28,8 @@ public class Cell : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
 
     public void SetSelect(Material material)
     {
-       
-        _select.enabled = true;
         _select.sharedMaterial = material;
+        _select.enabled = true;
     }
 
     public void ResetSelect (Material material)
