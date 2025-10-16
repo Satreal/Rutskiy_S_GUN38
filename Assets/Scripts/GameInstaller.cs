@@ -11,8 +11,8 @@ public class GameInstaller : MonoInstaller
         
         _controls.Game.Enable();
         Container.BindInstance(_controls.Game).AsSingle();
-        Container.Bind<InputManager>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<CellManager>().FromComponentInHierarchy().AsSingle();
+        //Container.Bind<InputManager>().FromComponentInHierarchy().AsSingle();
+        //Container.Bind<CellManager>().FromComponentInHierarchy().AsSingle();
         
     }
 }
