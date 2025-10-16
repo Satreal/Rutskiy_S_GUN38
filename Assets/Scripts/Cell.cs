@@ -9,7 +9,7 @@ public class Cell : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     [SerializeField]
     private MeshRenderer _select;
     public event Action<Cell> OnPointerClickEvent;
-
+    public Unit Unit { get; set; }
     public void OnPointerEnter(PointerEventData eventData)
     {
         _focus.enabled = true;
